@@ -9,11 +9,21 @@ from .models import User
 class UserAdmin(DjangoUserAdmin):
 
     fieldsets = (
-        (None, {'fields': ('app_id', 'username', 'email', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name')}),
-        ('Permissions', {'fields': ('is_confirmed', 'is_active', 'is_staff',
-                                    'is_superuser', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined',)}),
+        (None, {
+        	'fields': ('app_id', 'username', 'email', 'password')}
+        ),
+        ('Personal info', {
+        	'fields': ('first_name', 'last_name')}
+        ),
+        ('Custom fields', {
+        	'fields': ('is_confirmed', 'role',)}
+        ),
+        ('Permissions', {
+        	'fields': ('is_active', 'is_staff', 'is_superuser')}
+        ),
+        ('Important dates', {
+        	'fields': ('last_login', 'date_joined',)}
+        ),
     )
     add_fieldsets = (
         (None, {
