@@ -1,8 +1,8 @@
 from rest_framework import generics
 
 
+from users.permissions import AdminPermission
 from .models import Shop
-from .permissions import AdminPermission
 from .serializers import ShopSerializer
 
 
