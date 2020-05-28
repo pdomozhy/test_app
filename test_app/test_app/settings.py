@@ -110,13 +110,24 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        # 'rest_framework.permissions.IsAuthenticated',
         'users.permissions.UserPermission',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+
+# Email config
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'django@localhost'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_TIMEOUT = 30
+
+# #use:
+# python -m smtpd -n -c DebuggingServer localhost:1025
 
 
 # Custom User model:
