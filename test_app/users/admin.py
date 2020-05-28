@@ -10,20 +10,20 @@ class UserAdmin(DjangoUserAdmin):
 
     fieldsets = (
         (None, {
-        	'fields': ('app_id', 'username', 'email', 'password')}
-        ),
+            'fields': ('app_id', 'username', 'email', 'password')}
+         ),
         ('Personal info', {
-        	'fields': ('first_name', 'last_name',)}
-        ),
+            'fields': ('first_name', 'last_name',)}
+         ),
         ('Custom fields', {
-        	'fields': ('is_confirmed', 'role', 'shop',)}
-        ),
+            'fields': ('is_confirmed', 'role', 'shop',)}
+         ),
         ('Permissions', {
-        	'fields': ('is_active', 'is_staff', 'is_superuser',)}
-        ),
+            'fields': ('is_active', 'is_staff', 'is_superuser',)}
+         ),
         ('Important dates', {
-        	'fields': ('last_login', 'date_joined',)}
-        ),
+            'fields': ('last_login', 'date_joined',)}
+         ),
     )
     add_fieldsets = (
         (None, {
@@ -32,8 +32,8 @@ class UserAdmin(DjangoUserAdmin):
         }),
     )
     readonly_fields = ('app_id',)
-    list_display = ('__str__', 'first_name', 'last_name',
-                                'is_confirmed','shop',)
+    list_display = ('app_id', 'username', 'email', 'first_name', 'last_name',
+                    'is_confirmed', 'shop',)
     search_fields = ('username', 'email', 'app_id', 'first_name', 'last_name',)
     ordering = ('date_joined',)
     list_filter = ('is_active', 'is_staff', 'is_superuser', 'is_confirmed',)
